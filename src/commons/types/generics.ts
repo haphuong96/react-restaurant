@@ -1,13 +1,13 @@
-export type DivProps = React.DetailedHTMLProps<
+export type ReactDivProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 >;
-export type ButtonProps = React.DetailedHTMLProps<
+export type ReactButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >;
 
-export type SVGProps = React.SVGProps<SVGSVGElement> & {
+export type ReactSVGProps = React.SVGProps<SVGSVGElement> & {
   title?: string;
   titleId?: string;
   desc?: string;

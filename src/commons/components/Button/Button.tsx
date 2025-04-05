@@ -1,11 +1,15 @@
+import { ReactButtonProps } from "@/commons/types/generics";
 import { ReactNode } from "react";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonProps = {
   children?: ReactNode;
   className?: string;
-}
+} & ReactButtonProps;
 
-export const Button = ({ children, className }: ButtonProps) => {
-  return <button className={className}>{children}</button>;
+export const Button = ({ children, className, ...rest }: ButtonProps) => {
+  return (
+    <button className={className} {...rest}>
+      {children}
+    </button>
+  );
 };
