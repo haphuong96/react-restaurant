@@ -1,72 +1,65 @@
 import Slider from "react-slick";
-import jumbotron1 from "../../../../assets/jumbotron.png";
 import jumbotron2 from "../../../../assets/jumbotron2.png";
-import SliderChevronLeft from "../../../../assets/arrows/slider-chevron-left.svg";
-import SliderChevronRight from "../../../../assets/arrows/slider-chevron-right.svg";
 import "./Jumbotron.style.css";
-import { Text } from "../../../../../commons/components/Text/Text";
 import { Button } from "../../../../../commons/components/Button/Button";
+import { Icon } from "../../../../../commons/components/Icon/Icon";
 
 export type SlideArrowProps = {
+  children?: React.ReactNode;
   className?: string;
-  style?: React.CSSProperties;
-  onClick?: () => void;
-};
-const PrevArrow = (props: SlideArrowProps) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={`${className} absolute left-0`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
-      <img src={SliderChevronLeft} className="w-5 h-5 bg-gray-300" />
-    </div>
-  );
+  customStyle?: React.CSSProperties;
+  onClick?: () => unknown;
 };
 
-const NextArrow = (props: SlideArrowProps) => {
-  const { className, style, onClick } = props;
+const Arrow = ({
+  children,
+  className,
+  customStyle,
+  onClick,
+}: SlideArrowProps) => {
   return (
-    <div
-      className={`${className} absolute z-10 right-0`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
-      <img src={SliderChevronRight} className="w-5 h-5 bg-gray-300" />
+    <div className={className} style={{ ...customStyle }} onClick={onClick}>
+      {children}
     </div>
   );
 };
 
 export const Jumbotron = () => {
   return (
-    <div className="relative">
-      <Slider
-        infinite
-        arrows
-        dots
-        slidesToShow={1}
-        slidesToScroll={1}
-        prevArrow={<PrevArrow />}
-        nextArrow={<NextArrow />}
-      >
-        <div className="relative">
-          <div className="absolute left-1/2 -translate-x-1/2 top-1/6 text-white ">
-            <Text typeScale="t1" fontWeight="bold">
-              Delicious Delights, Shared Moments
-            </Text>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
-            </Text>
-            <Button className="bg-[#C50533]">ORDER NOW</Button>
+    <Slider
+      infinite
+      arrows
+      dots
+      slidesToShow={1}
+      slidesToScroll={1}
+      prevArrow={
+        <Arrow>
+          <Icon name="slider-chevron-left" />
+        </Arrow>
+      }
+      nextArrow={
+        <Arrow>
+          <Icon name="slider-chevron-right" />
+        </Arrow>
+      }
+    >
+      <div className="slide slide-1-bg">
+        <div className="absolute left-1/2 -translate-x-1/2 top-1/6 text-white text-center z-10">
+          <h2 className="font-merienda text-[40px]">
+            Delicious Delights, Shared Moments
+          </h2>
+          <div className="mt-2.5 font-medium">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </div>
+          <Button className="py-2.5 px-9 bg-primary-red mt-12 rounded-[40px] font-bold">
+            ORDER NOW
+          </Button>
+        </div>
+      </div>
 
-          <img src={jumbotron1} className="w-full h-full object-cover" />
-        </div>
-        <div>
-          <img src={jumbotron2} className="w-full h-full object-cover" />
-        </div>
-      </Slider>
-    </div>
+      <div className="slide">
+        <img src={jumbotron2} className="w-full h-full object-cover" />
+      </div>
+    </Slider>
   );
 };

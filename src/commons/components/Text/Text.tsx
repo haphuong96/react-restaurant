@@ -1,8 +1,7 @@
+// TODO: Re-evaluate the need for this component
 import { JSX, ReactNode } from "react";
 
 type TypeScale = "t1" | "t2" | "bt1" | "bt2" | "bt3";
-
-type FontWeight = "regular" | "medium" | "semibold" | "bold";
 
 // TODO: check if it is possible to use Tailwind config to define these values
 // Map typescale to font size classes
@@ -14,19 +13,10 @@ const typeScaleClasses: Record<TypeScale, string> = {
   bt3: "text-sm",
 };
 
-// Map font weight to font-weight classes
-const fontWeightClasses: Record<FontWeight, string> = {
-  regular: "font-normal",
-  medium: "font-medium",
-  semibold: "font-semibold",
-  bold: "font-bold",
-};
-
-export type TextProps = {
+export type TextProps = React.HTMLAttributes<HTMLSpanElement> & {
   children?: ReactNode;
   className?: string;
   typeScale?: TypeScale;
-  fontWeight?: FontWeight;
   color?: string;
   as?: keyof JSX.IntrinsicElements;
 };
@@ -34,14 +24,12 @@ export type TextProps = {
 export const Text = ({
   children,
   className,
-  fontWeight = "regular",
   typeScale = "bt3",
+  ...rest
 }: TextProps) => {
   return (
-    <div
-      className={`${typeScaleClasses[typeScale]} ${fontWeightClasses[fontWeight]} ${className}`}
-    >
+    <span className={`${typeScaleClasses[typeScale]} ${className}`} {...rest}>
       {children}
-    </div>
+    </span>
   );
 };

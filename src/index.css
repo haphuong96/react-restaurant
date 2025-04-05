@@ -1,3 +1,35 @@
 @import "tailwindcss";
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("commons/assets/fonts/Manrope-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("commons/assets/fonts/Merienda-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@theme {
+  /* font family */
+  --font-manrope: "Manrope";
+  --font-merienda: "Merienda";
+
+  /* color */
+  --color-primary-red: #970024;
+
+  /* typography scale */
+}
+
+body {
+  font-family: "Manrope";
+  max-width: 1920px;
+}

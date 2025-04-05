@@ -7,5 +7,5 @@ export interface ButtonProps
 }
 
 export const Button = ({ children, className }: ButtonProps) => {
-  return <button className={`py-2 px-5 ${className}`}>{children}</button>;
+  return <button className={className}>{children}</button>;
 };
