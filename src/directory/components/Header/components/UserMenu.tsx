@@ -1,5 +1,5 @@
-import { Button } from "../../../../commons/components/Button/Button";
-import { Icon } from "../../../../commons/components/Icon/Icon";
+import { Button } from "@/commons/components/Button/Button";
+import { Icon } from "@/commons/components/Icon/Icon";
 
 export const UserMenu = () => {
   return (

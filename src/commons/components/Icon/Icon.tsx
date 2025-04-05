@@ -1,4 +1,4 @@
-import { SVGProps } from "../../types/generics";
+import { SVGProps } from "@/commons/types/generics";
 import { IconName, ICONS } from "./icon-list";
 
 export type IconProps = {

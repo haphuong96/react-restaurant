@@ -1,5 +1,5 @@
-import { Container } from "../Container/Container";
-import logo from "../../../commons/assets/logo.svg";
+import { Container } from "@/directory/components/Container/Container";
+import logo from "@/commons/assets/logo.svg";
 import { UserMenu } from "./components/UserMenu";
 import { NavBar } from "./components/NavBar";
 

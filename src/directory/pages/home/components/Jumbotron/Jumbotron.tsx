@@ -1,8 +1,8 @@
 import Slider from "react-slick";
-import jumbotron2 from "../../../../assets/jumbotron2.png";
+import jumbotron2 from "@/directory/assets/jumbotron2.png";
 import "./Jumbotron.style.css";
-import { Button } from "../../../../../commons/components/Button/Button";
-import { Icon } from "../../../../../commons/components/Icon/Icon";
+import { Button } from "@/commons/components/Button/Button";
+import { Icon } from "@/commons/components/Icon/Icon";
 
 export type SlideArrowProps = {
   children?: React.ReactNode;
