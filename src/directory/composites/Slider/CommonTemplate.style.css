@@ -1,5 +1,4 @@
-.slick-prev,
-.slick-next {
+.slider-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -11,20 +10,21 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.7);
   }
-
-  &::before {
-    content: "";
-  }
 }
 
-.slick-prev {
+.slider-arrow-prev {
   left: 20px;
 }
 
-.slick-next {
+.slider-arrow-next {
   right: 20px;
+}
+
+/* TODO : Add styles for the slider dots */
+.slider-dots {
 }

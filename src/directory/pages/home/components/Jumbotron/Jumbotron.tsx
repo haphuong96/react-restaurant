@@ -1,10 +1,15 @@
 import jumbotron2 from "@/directory/assets/jumbotron2.png";
 import "./Jumbotron.style.css";
 import { Button } from "@/commons/components/Button/Button";
-import { Slider } from "@/directory/components/Slider/Slider";
+import { SliderCommonTemplate as Slider } from "@/directory/composites/Slider/CommonTemplate";
 
 export const Jumbotron = () => {
-  return <Slider slides={[<FirstSlide key="1" />, <SecondSlide key="2" />]} />;
+  return (
+    <Slider>
+      <FirstSlide key="1" />
+      <SecondSlide key="2" />
+    </Slider>
+  );
 };
 
 const FirstSlide = () => (

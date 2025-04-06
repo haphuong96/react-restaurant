@@ -1,19 +1,27 @@
-export type SliderArrowProps = {
-  children: React.ReactNode;
+type _SliderArrowProps = {
+  children?: React.ReactNode;
   className?: string;
+  customClass?: string;
   customStyle?: React.CSSProperties;
-  onClick?: () => unknown;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
 export const SliderArrow = ({
   children,
   className,
+  customClass,
   customStyle,
   onClick,
-}: SliderArrowProps) => {
+}: _SliderArrowProps) => {
   return (
-    <div className={className} style={{ ...customStyle }} onClick={onClick}>
+    <div
+      className={customClass || className}
+      style={customStyle}
+      onClick={onClick}
+    >
       {children}
     </div>
   );
 };
+
+export type SliderArrowProps = Omit<_SliderArrowProps, "className">;
