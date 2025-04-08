@@ -16,7 +16,7 @@ export const SliderCommonTemplate = ({
     infinite
     arrows
     dots
-    dotsClass="slick-dots"
+    dotsClass="slick-dots slider-dots"
     slidesToScroll={slidesToScroll}
     slidesToShow={slidesToShow}
     nextArrowProps={{
