@@ -15,21 +15,12 @@ type CreateProductData = Omit<Product, "id">;
 type UpdateProductData = Partial<Product>;
 
 export class ProductService {
-  private static instance: ProductService;
-
   private api: BaseService;
   private readonly basePath = "/product";
 
-  constructor() {
+  constructor(api: BaseService) {
     // Use DI instead of singleton
-    this.api = BaseService.getInstance();
-  }
-
-  public static getInstance(): ProductService {
-    if (!ProductService.instance) {
-      ProductService.instance = new ProductService();
-    }
-    return ProductService.instance;
+    this.api = api;
   }
 
   // Get all products - renamed to match domain concept

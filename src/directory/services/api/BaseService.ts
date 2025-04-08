@@ -7,8 +7,6 @@ export interface ApiResponse<T> {
 }
 
 export class BaseService {
-  private static instance: BaseService;
-
   protected client: AxiosInstance;
   protected baseURL: string;
 
@@ -39,13 +37,6 @@ export class BaseService {
       (response) => response,
       (error) => this.handleError(error)
     );
-  }
-
-  public static getInstance(): BaseService {
-    if (!BaseService.instance) {
-      BaseService.instance = new BaseService();
-    }
-    return BaseService.instance;
   }
 
   /**
