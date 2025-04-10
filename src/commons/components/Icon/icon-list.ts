@@ -7,6 +7,7 @@ import MenuFavorite from "./icons/dir/menu/favorite.svg?react";
 import MenuPhone from "./icons/dir/menu/phone.svg?react";
 import MenuUser from "./icons/dir/menu/user.svg?react";
 import MenuLanguage from "./icons/dir/menu/english.svg?react";
+import ProductRating from "./icons/dir/product/ProductRating";
 
 export const ICONS = {
   "slider-chevron-left": SliderChevronLeft,
@@ -16,6 +17,7 @@ export const ICONS = {
   "menu-phone": MenuPhone,
   "menu-user": MenuUser,
   "menu-language": MenuLanguage,
+  "product-rating": ProductRating,
 };
 
 export type IconName = keyof typeof ICONS;
