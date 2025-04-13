@@ -1,4 +1,6 @@
+import { configs } from "@/directory/app/configs/configs";
 import { BaseService, ApiResponse } from "./BaseService";
+import mock from "./mock/product";
 
 // Use interface for entity models that might be extended
 export interface Product {
@@ -7,7 +9,7 @@ export interface Product {
   price: number;
   currentPrice: number;
   isBestSeller: boolean;
-  thumbnail?: string;
+  thumbnail: string | null;
 }
 
 // Use type for function parameter shapes or intermediate types
@@ -31,6 +33,14 @@ export class ProductService {
   }
 
   public async getBestSellers(): Promise<ApiResponse<Product[]>> {
+    if (configs.enableMock) {
+      return Promise.resolve({
+        data: mock.bestSellers,
+        status: 200,
+        statusText: "OK",
+      } as ApiResponse<Product[]>);
+    }
+
     return this.getProducts({ is_best_seller: true });
   }
 

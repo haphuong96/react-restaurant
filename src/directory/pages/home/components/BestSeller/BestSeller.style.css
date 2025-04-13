@@ -1,0 +1,6 @@
+@reference "../../../../../index.css";
+
+.slider {
+  display: flex;
+  gap: 4px;
+}

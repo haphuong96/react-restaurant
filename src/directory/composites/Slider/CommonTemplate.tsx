@@ -4,21 +4,19 @@ import "./CommonTemplate.style.css";
 
 export type SliderCommonTemplateProps = Pick<
   SliderProps,
-  "children" | "slidesToShow" | "slidesToScroll"
+  "children" | "slidesToShow" | "slidesToScroll" | "dots" | "className"
 >;
 
 export const SliderCommonTemplate = ({
   children,
-  slidesToShow,
-  slidesToScroll,
+  dots = false,
+  ...rest
 }: SliderCommonTemplateProps) => (
   <Slider
     infinite
     arrows
-    dots
+    dots={dots}
     dotsClass="slick-dots slider-dots"
-    slidesToScroll={slidesToScroll}
-    slidesToShow={slidesToShow}
     nextArrowProps={{
       children: <Icon name="slider-chevron-right" />,
       customClass: "slider-arrow slider-arrow-next",
@@ -27,6 +25,7 @@ export const SliderCommonTemplate = ({
       children: <Icon name="slider-chevron-left" />,
       customClass: "slider-arrow slider-arrow-prev",
     }}
+    {...rest}
   >
     {children}
   </Slider>

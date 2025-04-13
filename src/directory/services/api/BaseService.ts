@@ -1,3 +1,4 @@
+import { configs } from "@/directory/app/configs/configs";
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 export interface ApiResponse<T> {
@@ -10,7 +11,7 @@ export class BaseService {
   protected client: AxiosInstance;
   protected baseURL: string;
 
-  constructor(baseURL: string = import.meta.env.VITE_API_URL || "") {
+  constructor(baseURL: string = configs.apiUrl) {
     this.baseURL = baseURL;
     this.client = axios.create({
       baseURL: this.baseURL,

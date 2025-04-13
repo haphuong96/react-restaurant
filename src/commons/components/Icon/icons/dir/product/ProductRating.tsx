@@ -1,7 +1,7 @@
 import { ReactSVGProps } from "@/commons/types/generics";
 
 export type ProductRatingProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 } & ReactSVGProps;
 
 const ProductRating: React.FC<ProductRatingProps> = ({

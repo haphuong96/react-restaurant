@@ -1,35 +1,48 @@
-// TODO: Re-evaluate the need for this component
 import { JSX, ReactNode } from "react";
 
-type TypeScale = "t1" | "t2" | "bt1" | "bt2" | "bt3";
+type TypeScale = "t2" | "ct3" | "b3";
 
-// TODO: check if it is possible to use Tailwind config to define these values
 // Map typescale to font size classes
-const typeScaleClasses: Record<TypeScale, string> = {
-  t1: "text-2xl",
-  t2: "text-xl",
-  bt1: "text-lg",
-  bt2: "text-base",
-  bt3: "text-sm",
+const typeScaleClasses: Record<
+  TypeScale,
+  { tag: keyof JSX.IntrinsicElements; className: string }
+> = {
+  t2: {
+    tag: "h2",
+    className: "uppercase font-medium text-[32px]",
+  },
+  ct3: {
+    tag: "h3",
+    className: "font-light text-base",
+  },
+  b3: {
+    tag: "span",
+    className: "font-normal text-base",
+  },
 };
 
-export type TextProps = React.HTMLAttributes<HTMLSpanElement> & {
+export type TextProps = React.HTMLAttributes<HTMLOrSVGElement> & {
   children?: ReactNode;
   className?: string;
   typeScale?: TypeScale;
-  color?: string;
   as?: keyof JSX.IntrinsicElements;
 };
 
 export const Text = ({
   children,
   className,
-  typeScale = "bt3",
+  typeScale = "b3",
+  as,
   ...rest
 }: TextProps) => {
+  const Tag = as || typeScaleClasses[typeScale].tag;
+  const combinedClassName = `${typeScaleClasses[typeScale].className} ${
+    className ? className : ""
+  }`;
+
   return (
-    <span className={`${typeScaleClasses[typeScale]} ${className}`} {...rest}>
+    <Tag className={combinedClassName} {...rest}>
       {children}
-    </span>
+    </Tag>
   );
 };

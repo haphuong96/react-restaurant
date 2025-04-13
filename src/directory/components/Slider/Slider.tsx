@@ -1,17 +1,11 @@
-import SlickSlider from "react-slick";
+import SlickSlider, { Settings } from "react-slick";
 import { SliderArrow, SliderArrowProps } from "./SliderArrow";
 
 export type SliderProps = {
   children: React.ReactNode[];
-  infinite?: boolean;
-  arrows?: boolean;
-  dots?: boolean;
-  dotsClass?: string;
-  slidesToShow?: number;
-  slidesToScroll?: number;
   prevArrowProps?: SliderArrowProps;
   nextArrowProps?: SliderArrowProps;
-};
+} & Omit<Settings, "prevArrow" | "nextArrow">;
 
 /**
  * @param children - Array of slides to be displayed in the slider.
@@ -23,6 +17,8 @@ export type SliderProps = {
  * @param slidesToScroll - Number of slides to scroll at once.
  * @param prevArrowProps - Props for the previous arrow component.
  * @param nextArrowProps - Props for the next arrow component.
+ * @param className - Additional class names for the slider.
+ * @param style - Additional styles for the slider.
  * @returns
  */
 export const Slider = ({
@@ -35,6 +31,7 @@ export const Slider = ({
   slidesToScroll = 1,
   prevArrowProps,
   nextArrowProps,
+  ...rest
 }: SliderProps) => {
   return (
     <SlickSlider
@@ -46,6 +43,7 @@ export const Slider = ({
       slidesToScroll={slidesToScroll}
       prevArrow={<SliderArrow {...prevArrowProps} />}
       nextArrow={<SliderArrow {...nextArrowProps} />}
+      {...rest}
     >
       {children}
     </SlickSlider>

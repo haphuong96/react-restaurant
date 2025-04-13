@@ -5,7 +5,7 @@ import { SliderCommonTemplate as Slider } from "@/directory/composites/Slider/Co
 
 export const Jumbotron = () => {
   return (
-    <Slider>
+    <Slider dots>
       <FirstSlide key="1" />
       <SecondSlide key="2" />
     </Slider>
@@ -21,7 +21,7 @@ const FirstSlide = () => (
       <div className="mt-2.5 font-medium">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </div>
-      <Button className="py-2.5 px-9 bg-primary-red mt-12 rounded-[40px] font-bold">
+      <Button theme="primary" radius={40} className="mt-12 font-bold">
         ORDER NOW
       </Button>
     </div>

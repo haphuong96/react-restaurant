@@ -1,79 +1,62 @@
 import React from "react";
 import { Icon } from "../Icon/Icon";
 
-interface StarRatingProps {
+type StarRatingProps = {
   rating: number;
   maxRating?: number;
-  size?: "xs" | "sm" | "md" | "lg";
   className?: string;
-  showValue?: boolean;
-  reviews?: number;
-  interactive?: boolean;
-  onChange?: (newRating: number) => void;
-  color?: "yellow" | "primary";
-}
+  // TODO: custom character if not using default star component
+};
 
 export const StarRating: React.FC<StarRatingProps> = ({
   rating,
   maxRating = 5,
-  size = "md",
-  className = "",
+  className,
 }) => {
-  const sizeClass = {
-    xs: "w-1",
-    sm: "text-sm",
-    md: "text-base",
-    lg: "text-lg",
-  };
   // Generate stars based on rating
   const renderStars = () => {
     const stars = [];
     for (let i = 0; i < maxRating; i++) {
-      const fillLevel = rating - i;
-      if (fillLevel >= 1) {
-        //fully filled star
-        stars.push(<Star id={i} key={i} fill={1} />);
-      } else if (fillLevel > 0 && fillLevel < 1) {
-        // partially filled star
-        stars.push(<Star id={i} key={i} fill={fillLevel} />);
-      } else {
-        stars.push(<Star id={i} key={i} fill={0} />);
-      }
+      // fill should be between 0 and 1 (0% to 100%)
+      const fillPercentage = Math.max(0, Math.min(1, rating - i)) * 100;
+      stars.push(<Star id={i} key={i} fillPercentage={fillPercentage} />);
     }
 
     return stars;
   };
-  return (
-    <div className={`flex items-center ${sizeClass[size]} ${className}`}>
-      <div className="flex">{renderStars()}</div>
-      {/* {showValue && (
-        <span className="ml-1 text-gray-600 font-medium">
-          {rating.toFixed(1)}
-        </span>
-      )}
-      {reviews !== undefined && (
-        <span className="ml-1 text-gray-500">
-          ({reviews} {reviews === 1 ? "review" : "reviews"})
-        </span>
-      )} */}
-    </div>
-  );
+
+  return <div className={`flex gap-1 ${className}`}>{renderStars()}</div>;
 };
 
-export const Star = ({ id, fill }: { id: number; fill: number }) => {
-  // fill should be between 0 and 1 (0% to 100%)
-  const fillPercentage = Math.max(0, Math.min(1, fill)) * 100;
+export type StarProps = {
+  id: number;
+  fillPercentage: number;
+  size?: number;
+  color?: string;
+  filledColor?: string;
+};
+
+export const Star = ({
+  id,
+  fillPercentage,
+  size = 14,
+  color = "#FFD02C",
+  filledColor = "#DDDDDD",
+}: StarProps) => {
   return (
-    <>
-      <Icon name="product-rating" fill={`url('#fill-${id}')`}>
-        <defs>
-          <linearGradient id={`fill-${id}`}>
-            <stop offset={`${fillPercentage}%`} stopColor="#FFD02C" />
-            <stop offset={`${fillPercentage}%`} stopColor="#DDDDDD" />
-          </linearGradient>
-        </defs>
-      </Icon>
-    </>
+    <Icon
+      name="product-rating"
+      fill={`url('#fill-${id}')`}
+      width={size}
+      height={size}
+    >
+      <defs>
+        <linearGradient id={`fill-${id}`}>
+          <stop offset={`${fillPercentage}%`} stopColor={color} />
+          <stop offset={`${fillPercentage}%`} stopColor={filledColor} />
+        </linearGradient>
+      </defs>
+    </Icon>
   );
 };
 

@@ -20,11 +20,11 @@
 }
 
 .slider-arrow-prev {
-  left: 20px;
+  left: max(calc((100% - theme(--container-7xl)) / 2), 0px);
 }
 
 .slider-arrow-next {
-  right: 20px;
+  right: max(calc((100% - theme(--container-7xl)) / 2), 0px);
 }
 
 .slider-dots {
