@@ -1,8 +1,17 @@
-import type { BaseTranslation } from '../i18n-types'
+import type { BaseTranslation } from "../i18n-types";
 
 const en = {
-	// TODO: your translations go here
-	HI: 'Hi {name:string}! Please leave a star if you like this project: https://github.com/ivanhofer/typesafe-i18n',
-} satisfies BaseTranslation
+  // TODO: your translations go here
+  navbar: {
+    home: "Home",
+    menu: "Menu",
+    about: "About",
+    promotion: "Promotion",
+  },
+  homepage: {
+    jumbotron_title: "Delicious Delights, Shared Moments",
+    best_seller: "Best seller",
+  },
+} satisfies BaseTranslation;
 
-export default en
+export default en;
