@@ -8,8 +8,8 @@ export type IconProps = {
 /**
  * Can use inline SVG JSX if Icon needs to be customized to include nested children inside.
  */
-export const Icon = ({ name, ...rest }: IconProps) => {
+export const Icon = ({ name, width = 24, height = 24, ...rest }: IconProps) => {
   const Component = ICONS[name];
 
-  return <Component {...rest} />;
+  return <Component width={width} height={height} {...rest} />;
 };

@@ -1,7 +1,7 @@
 export const bestSellers = [
   {
     id: 1,
-    name: "Best Seller Product",
+    name: "Slices of smoked turkey",
     price: 100,
     currentPrice: 50,
     isBestSeller: true,
@@ -9,7 +9,7 @@ export const bestSellers = [
   },
   {
     id: 1,
-    name: "Best Seller Product",
+    name: "Slices of smoked turkey",
     price: 100,
     currentPrice: 50,
     isBestSeller: true,
@@ -17,7 +17,7 @@ export const bestSellers = [
   },
   {
     id: 1,
-    name: "Best Seller Product",
+    name: "Slices of smoked turkey",
     price: 100,
     currentPrice: 50,
     isBestSeller: true,
@@ -25,7 +25,7 @@ export const bestSellers = [
   },
   {
     id: 1,
-    name: "Best Seller Product",
+    name: "Slices of smoked turkey",
     price: 100,
     currentPrice: 50,
     isBestSeller: true,
@@ -33,7 +33,7 @@ export const bestSellers = [
   },
   {
     id: 1,
-    name: "Best Seller Product",
+    name: "Slices of smoked turkey",
     price: 100,
     currentPrice: 50,
     isBestSeller: true,

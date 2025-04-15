@@ -1,7 +1,8 @@
+import { Spinner } from "@/commons/components/Spinner/Spinner";
 import TypesafeI18n from "@/commons/i18n/i18n-react";
 import { detectLocale } from "@/commons/i18n/i18n-util";
 import { loadLocaleAsync } from "@/commons/i18n/i18n-util.async";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { sessionStorageDetector } from "typesafe-i18n/detectors";
 
 const detectedLocale = detectLocale(sessionStorageDetector);
@@ -19,5 +20,9 @@ export const Translation: React.FC<TranslationProps> = ({ children }) => {
 
   if (!wasLoaded) return null;
 
-  return <TypesafeI18n locale={detectedLocale}>{children}</TypesafeI18n>;
+  return (
+    <Suspense fallback={<Spinner fullScreen={true} size="xl" />}>
+      <TypesafeI18n locale={detectedLocale}>{children}</TypesafeI18n>
+    </Suspense>
+  );
 };

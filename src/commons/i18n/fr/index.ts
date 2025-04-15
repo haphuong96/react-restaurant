@@ -8,7 +8,10 @@ const fr = {
     promotion: "Promotion",
   },
   homepage: {
-    jumbotron_title: "Délices gourmands, moments partagés",
+    jumbotron: {
+      delicious_delights_shared_moments: "Délices gourmands, moments partagés",
+      order_now: "Commander maintenant",
+    },
     best_seller: "Meilleures ventes",
   },
 } satisfies Translation;

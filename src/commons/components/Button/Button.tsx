@@ -1,8 +1,8 @@
 import { ReactButtonProps } from "@/commons/types/generics";
 import { ReactNode } from "react";
 
-// Define button theme options
-export type ButtonTheme =
+// Define button variant options
+export type ButtonVariant =
   | "primary"
   | "secondary"
   | "outline"
@@ -23,8 +23,8 @@ export type BorderRadius =
   | "rounded-full"
   | number;
 
-// Map themes to appropriate Tailwind classes
-const themeClasses: Record<ButtonTheme, string> = {
+// Map variants to appropriate Tailwind classes
+const variantClasses: Record<ButtonVariant, string> = {
   default: "",
   primary:
     "bg-[var(--color-primary-red)] text-white hover:opacity-90 shadow-[0px_10px_20px_0px_#C5053333] px-9 py-2.5",
@@ -38,7 +38,7 @@ const themeClasses: Record<ButtonTheme, string> = {
 export type ButtonProps = {
   children?: ReactNode;
   className?: string;
-  theme?: ButtonTheme;
+  variant?: ButtonVariant;
   size?: ButtonSize;
   radius?: BorderRadius;
   fullWidth?: boolean;
@@ -47,7 +47,7 @@ export type ButtonProps = {
 export const Button = ({
   children,
   className = "",
-  theme = "default",
+  variant = "default",
   radius = "rounded-lg", // Default to 8px
   fullWidth = false,
   ...rest
@@ -64,10 +64,10 @@ export const Button = ({
   }
 
   const classes = [
-    themeClasses[theme],
+    variantClasses[variant],
     fullWidth ? "w-full" : "",
     radiusClass,
-    "cursor-pointer font-medium transition-all duration-200",
+    "cursor-pointer transition-all duration-200",
     className,
   ].join(" ");
 

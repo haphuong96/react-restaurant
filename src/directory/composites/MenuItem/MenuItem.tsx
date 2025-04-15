@@ -68,7 +68,7 @@ export const MenuItemCard: React.FC<MenuItemProps> = ({
         )}
       </div>
 
-      <Button theme="primary" className="my-4">
+      <Button variant="primary" className="my-4">
         Add to Cart
       </Button>
     </div>

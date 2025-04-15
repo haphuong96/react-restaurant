@@ -33,10 +33,16 @@ type RootTranslation = {
 		promotion: string
 	}
 	homepage: {
-		/**
-		 * D​e​l​i​c​i​o​u​s​ ​D​e​l​i​g​h​t​s​,​ ​S​h​a​r​e​d​ ​M​o​m​e​n​t​s
-		 */
-		jumbotron_title: string
+		jumbotron: {
+			/**
+			 * D​e​l​i​c​i​o​u​s​ ​D​e​l​i​g​h​t​s​,​ ​S​h​a​r​e​d​ ​M​o​m​e​n​t​s
+			 */
+			delicious_delights_shared_moments: string
+			/**
+			 * O​r​d​e​r​ ​n​o​w
+			 */
+			order_now: string
+		}
 		/**
 		 * B​e​s​t​ ​s​e​l​l​e​r
 		 */
@@ -64,10 +70,16 @@ export type TranslationFunctions = {
 		promotion: () => LocalizedString
 	}
 	homepage: {
-		/**
-		 * Delicious Delights, Shared Moments
-		 */
-		jumbotron_title: () => LocalizedString
+		jumbotron: {
+			/**
+			 * Delicious Delights, Shared Moments
+			 */
+			delicious_delights_shared_moments: () => LocalizedString
+			/**
+			 * Order now
+			 */
+			order_now: () => LocalizedString
+		}
 		/**
 		 * Best seller
 		 */

@@ -8,16 +8,20 @@ import MenuPhone from "./icons/dir/menu/phone.svg?react";
 import MenuUser from "./icons/dir/menu/user.svg?react";
 import MenuLanguage from "./icons/dir/menu/english.svg?react";
 import ProductRating from "./icons/dir/product/ProductRating";
+import Menu from "./icons/dir/menu/menu.svg?react";
 
 export const ICONS = {
   "slider-chevron-left": SliderChevronLeft,
   "slider-chevron-right": SliderChevronRight,
+
+  // dir menu
   "menu-bag": MenuBag,
   "menu-favorite": MenuFavorite,
   "menu-phone": MenuPhone,
   "menu-user": MenuUser,
   "menu-language": MenuLanguage,
   "product-rating": ProductRating,
+  "menu-bar": Menu,
 };
 
 export type IconName = keyof typeof ICONS;

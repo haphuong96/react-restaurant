@@ -9,7 +9,10 @@ const en = {
     promotion: "Promotion",
   },
   homepage: {
-    jumbotron_title: "Delicious Delights, Shared Moments",
+    jumbotron: {
+      delicious_delights_shared_moments: "Delicious Delights, Shared Moments",
+      order_now: "Order now",
+    },
     best_seller: "Best seller",
   },
 } satisfies BaseTranslation;
