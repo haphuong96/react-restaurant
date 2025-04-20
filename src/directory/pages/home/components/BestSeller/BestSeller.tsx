@@ -2,9 +2,8 @@ import { Text } from "@/commons/components/Text/Text";
 import { Container } from "@/directory/components/Container/Container";
 import MenuItemCard from "@/directory/composites/MenuItem/MenuItem";
 import { useHomePageContext } from "../../HomePage.Context";
-import { SliderCommonTemplate as Slider } from "@/directory/composites/Slider/CommonTemplate";
-import "./BestSeller.style.css";
 import { useI18nContext } from "@/commons/i18n/i18n-react";
+import { Slider } from "@/directory/components/Slider/Slider";
 
 export const BestSeller: React.FC = () => {
   const { LL } = useI18nContext();
@@ -17,7 +16,12 @@ export const BestSeller: React.FC = () => {
         {LL.homepage.best_seller()}
       </Text>
       {bestSellers?.length && (
-        <Slider slidesToShow={4} slidesToScroll={1} className="slider">
+        <Slider
+          slidesToShow={4}
+          slidesToScroll={1}
+          className="flex gap-1"
+          dots={false}
+        >
           {bestSellers.map((product) => (
             <MenuItemCard
               key={product.id}

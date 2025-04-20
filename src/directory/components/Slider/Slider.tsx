@@ -1,10 +1,13 @@
 import SlickSlider, { Settings } from "react-slick";
 import { SliderArrow, SliderArrowProps } from "./SliderArrow";
+import { Icon } from "@/commons/components/Icon/Icon";
+import "./Slider.style.css";
+import { JSX } from "react";
 
 export type SliderProps = {
-  children: React.ReactNode[];
-  prevArrowProps?: SliderArrowProps;
-  nextArrowProps?: SliderArrowProps;
+  children: JSX.Element[];
+  prevArrow?: SliderArrowProps;
+  nextArrow?: SliderArrowProps;
 } & Omit<Settings, "prevArrow" | "nextArrow">;
 
 /**
@@ -25,20 +28,31 @@ export const Slider = ({
   children,
   infinite = true,
   arrows = true,
-  dots = true,
-  dotsClass = "slick-dots",
+  dots = false,
+  dotsClass = "slider-dots",
   slidesToShow = 1,
   slidesToScroll = 1,
-  prevArrowProps,
-  nextArrowProps,
+  prevArrow,
+  nextArrow,
   ...rest
 }: SliderProps) => {
+  const prevArrowProps: SliderArrowProps = {
+    children: <Icon width={18} name="slider-chevron-left" />,
+    customClass: "slider-arrow slider-arrow-prev",
+    ...prevArrow,
+  };
+  const nextArrowProps: SliderArrowProps = {
+    children: <Icon width={18} name="slider-chevron-right" />,
+    customClass: "slider-arrow slider-arrow-next",
+    ...nextArrow,
+  };
+
   return (
     <SlickSlider
       infinite={infinite}
       arrows={arrows}
       dots={dots}
-      dotsClass={dotsClass}
+      dotsClass={`slick-dots ${dotsClass}`}
       slidesToShow={slidesToShow}
       slidesToScroll={slidesToScroll}
       prevArrow={<SliderArrow {...prevArrowProps} />}

@@ -15,14 +15,14 @@ export const UserMenu = () => {
     <div className="absolute top-5 right-0 flex gap-1">
       <div className="flex items-center">
         <Button
-          className={`p-2${locale === "en" ? " font-bold" : ""}`}
+          className={`${locale === "en" ? "font-bold" : ""} p-2`}
           onClick={() => handleLanguageChange("en")}
         >
           EN
         </Button>
         |
         <Button
-          className={`p-2${locale === "fr" ? " font-bold" : ""}`}
+          className={`${locale === "fr" ? "font-bold" : ""} p-2`}
           onClick={() => handleLanguageChange("fr")}
         >
           FR

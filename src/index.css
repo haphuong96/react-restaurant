@@ -34,3 +34,6 @@ body {
   font-family: "Manrope";
   max-width: 1920px;
 }
+
+@import "./commons/index.css";
+@import "./directory/index.css";
