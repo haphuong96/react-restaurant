@@ -1,6 +1,6 @@
 import { JSX, ReactNode } from "react";
 
-type TypeScale = "t2" | "ct3" | "b3";
+type TypeScale = "t2" | "t3" | "ct3" | "b3";
 
 // Map typescale to font size classes
 const typeScaleClasses: Record<
@@ -10,6 +10,10 @@ const typeScaleClasses: Record<
   t2: {
     tag: "h2",
     className: "uppercase font-medium text-[32px]",
+  },
+  t3: {
+    tag: "h3",
+    className: "uppercase font-medium text-4xl",
   },
   ct3: {
     tag: "h3",

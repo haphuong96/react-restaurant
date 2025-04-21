@@ -14,6 +14,13 @@ const en = {
       order_now: "Order now",
     },
     best_seller: "Best seller",
+    our_menu: "Our menu",
+    menu_category: {
+      low_price: "Low price",
+      high_price: "High price",
+      average_price: "Average price",
+      luxury_price: "Luxury price",
+    },
   },
 } satisfies BaseTranslation;
 

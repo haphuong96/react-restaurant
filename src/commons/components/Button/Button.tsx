@@ -8,7 +8,8 @@ export type ButtonVariant =
   | "secondary"
   | "outline"
   | "text"
-  | "default";
+  | "default"
+  | "outline-white";
 
 // Map variants to appropriate Tailwind classes
 
@@ -19,6 +20,8 @@ const variantClasses: Record<ButtonVariant, string> = {
   secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
   outline:
     "bg-transparent border border-[var(--color-primary-red)] text-[var(--color-primary-red)] hover:bg-[var(--color-primary-red)] hover:bg-opacity-10",
+  "outline-white":
+    "border border-white text-white shadow-[0px_4px_8px_0px_#00000026] hover:bg-white hover:text-black",
   text: "bg-transparent text-[var(--color-primary-red)] hover:underline",
 };
 

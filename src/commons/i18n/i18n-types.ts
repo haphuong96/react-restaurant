@@ -47,6 +47,28 @@ type RootTranslation = {
 		 * B​e​s​t​ ​s​e​l​l​e​r
 		 */
 		best_seller: string
+		/**
+		 * O​u​r​ ​m​e​n​u
+		 */
+		our_menu: string
+		menu_category: {
+			/**
+			 * L​o​w​ ​p​r​i​c​e
+			 */
+			low_price: string
+			/**
+			 * H​i​g​h​ ​p​r​i​c​e
+			 */
+			high_price: string
+			/**
+			 * A​v​e​r​a​g​e​ ​p​r​i​c​e
+			 */
+			average_price: string
+			/**
+			 * L​u​x​u​r​y​ ​p​r​i​c​e
+			 */
+			luxury_price: string
+		}
 	}
 }
 
@@ -84,6 +106,28 @@ export type TranslationFunctions = {
 		 * Best seller
 		 */
 		best_seller: () => LocalizedString
+		/**
+		 * Our menu
+		 */
+		our_menu: () => LocalizedString
+		menu_category: {
+			/**
+			 * Low price
+			 */
+			low_price: () => LocalizedString
+			/**
+			 * High price
+			 */
+			high_price: () => LocalizedString
+			/**
+			 * Average price
+			 */
+			average_price: () => LocalizedString
+			/**
+			 * Luxury price
+			 */
+			luxury_price: () => LocalizedString
+		}
 	}
 }
 

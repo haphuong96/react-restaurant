@@ -2,11 +2,13 @@ import { PageLayout } from "@/directory/components/PageLayout/PageLayout";
 import { Jumbotron } from "./components/Jumbotron/Jumbotron";
 import { BestSeller } from "./components/BestSeller/BestSeller";
 import { HomePageContextProvider } from "./HomePage.ContextProvider";
+import { MenuGrid } from "./components/OurMenu/MenuGrid";
 
 export const HomePageView: React.FC = () => (
   <PageLayout>
     <Jumbotron />
     <BestSeller />
+    <MenuGrid />
   </PageLayout>
 );
 

@@ -13,6 +13,13 @@ const fr = {
       order_now: "Commander maintenant",
     },
     best_seller: "Meilleures ventes",
+    our_menu: "Notre menu",
+    menu_category: {
+      low_price: "Aboutissement",
+      high_price: "Prix élevé",
+      average_price: "Prix moyen",
+      luxury_price: "Prix de luxe",
+    },
   },
 } satisfies Translation;
 

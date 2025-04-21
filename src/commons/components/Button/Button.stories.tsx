@@ -21,3 +21,11 @@ export const Default: Story = {
     children: "Default Button",
   },
 };
+
+export const OutlineWhite: Story = {
+  render: () => (
+    <div className="bg-black  h-screen flex justify-center items-center">
+      <Button variant="outline-white">Outline White Button</Button>
+    </div>
+  ),
+};
