@@ -9,6 +9,8 @@ import MenuUser from "./icons/dir/menu/user.svg?react";
 import MenuLanguage from "./icons/dir/menu/english.svg?react";
 import ProductRating from "./icons/dir/product/ProductRating";
 import Menu from "./icons/dir/menu/menu.svg?react";
+import Android from "./icons/dir/android.svg?react";
+import Ios from "./icons/dir/ios.svg?react";
 
 export const ICONS = {
   "slider-chevron-left": SliderChevronLeft,
@@ -22,6 +24,10 @@ export const ICONS = {
   "menu-language": MenuLanguage,
   "product-rating": ProductRating,
   "menu-bar": Menu,
+
+  //home
+  android: Android,
+  ios: Ios,
 };
 
 export type IconName = keyof typeof ICONS;

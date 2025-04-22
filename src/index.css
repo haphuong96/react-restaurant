@@ -27,12 +27,14 @@
 
   /* color */
   --color-primary-red: #970024;
+  --color-primary-black: #374151;
   /* typography scale */
 }
 
 body {
   font-family: "Manrope";
   max-width: 1920px;
+  color: var(--color-primary-black);
 }
 
 @import "./commons/index.css";

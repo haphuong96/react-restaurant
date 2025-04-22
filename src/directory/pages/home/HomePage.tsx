@@ -3,12 +3,14 @@ import { Jumbotron } from "./components/Jumbotron/Jumbotron";
 import { BestSeller } from "./components/BestSeller/BestSeller";
 import { HomePageContextProvider } from "./HomePage.ContextProvider";
 import { MenuGrid } from "./components/OurMenu/MenuGrid";
+import { QR } from "./components/QR/QR";
 
 export const HomePageView: React.FC = () => (
   <PageLayout>
     <Jumbotron />
     <BestSeller />
     <MenuGrid />
+    <QR />
   </PageLayout>
 );
 

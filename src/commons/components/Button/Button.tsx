@@ -30,6 +30,7 @@ export type ButtonProps = {
   className?: string;
   variant?: ButtonVariant;
   fullWidth?: boolean;
+  icon?: ReactNode;
 } & ReactButtonProps;
 
 export const Button = ({
@@ -37,6 +38,7 @@ export const Button = ({
   className = "",
   variant = "default",
   fullWidth = false,
+  icon,
   ...rest
 }: ButtonProps) => {
   const defaultRadius = "btn-radius";
@@ -47,7 +49,7 @@ export const Button = ({
     fullWidth ? "w-full" : "",
     defaultRadius,
     defaultPadding,
-    "cursor-pointer transition-all duration-200",
+    "cursor-pointer transition-all duration-200 flex justify-center",
     className,
   ]
     .filter((className) => className)
@@ -55,6 +57,7 @@ export const Button = ({
 
   return (
     <button className={classes} {...rest}>
+      {icon && <span className="mr-2 flex items-center">{icon}</span>}
       {children}
     </button>
   );

@@ -21,7 +21,7 @@ const FirstSlide = () => {
       backgroundImgUrl="/directory/assets/jumbotron.png"
       className="h-screen"
     >
-      <div className="absolute left-1/2 -translate-x-1/2 top-1/6 text-white text-center z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 top-1/6 text-white text-center z-10 flex flex-col items-center">
         <h2 className="font-merienda text-[40px]">
           {LL.homepage.jumbotron.delicious_delights_shared_moments()}
         </h2>
