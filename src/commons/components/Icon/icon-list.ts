@@ -11,6 +11,9 @@ import ProductRating from "./icons/dir/product/ProductRating";
 import Menu from "./icons/dir/menu/menu.svg?react";
 import Android from "./icons/dir/android.svg?react";
 import Ios from "./icons/dir/ios.svg?react";
+import Facebook from "./icons/dir/facebook.svg?react";
+import Twitter from "./icons/dir/twitter.svg?react";
+import Instagram from "./icons/dir/instagram.svg?react";
 
 export const ICONS = {
   "slider-chevron-left": SliderChevronLeft,
@@ -28,6 +31,10 @@ export const ICONS = {
   //home
   android: Android,
   ios: Ios,
+
+  "media-facebook": Facebook,
+  "media-twitter": Twitter,
+  "media-instagram": Instagram,
 };
 
 export type IconName = keyof typeof ICONS;
