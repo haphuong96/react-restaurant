@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/commons/components/Button/Button";
 import { StarRating } from "@/commons/components/StarRating/StarRating";
 import { Text } from "@/commons/components/Text/Text";
+import productThumbnail from "@/directory/assets/jumobotron3.png";
 
 interface MenuItemProps {
   name: string;
@@ -27,11 +28,12 @@ export const MenuItemCard: React.FC<MenuItemProps> = ({
       }`}
     >
       {/* card image */}
-      <div className="w-full min-h-44 flex items-center justify-center bg-gray-50 rounded-t-sm">
+      <div className="w-full min-h-44 flex items-center justify-center rounded-t-sm">
         {thumbnail ? (
           <img src={thumbnail} alt={name} className="menu-item-thumbnail" />
         ) : (
-          <div className="">No Image</div>
+          <img src={productThumbnail} className="scale-90 rounded-[40px]" />
+          // <div className="">No Image</div>
         )}
       </div>
 

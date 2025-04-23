@@ -49,7 +49,7 @@ export const Button = ({
     fullWidth ? "w-full" : "",
     defaultRadius,
     defaultPadding,
-    "cursor-pointer transition-all duration-200 flex justify-center",
+    "cursor-pointer transition-all duration-200 flex justify-center items-center",
     className,
   ]
     .filter((className) => className)
