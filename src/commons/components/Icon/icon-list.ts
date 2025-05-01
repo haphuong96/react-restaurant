@@ -14,6 +14,7 @@ import Ios from "./icons/dir/ios.svg?react";
 import Facebook from "./icons/dir/facebook.svg?react";
 import Twitter from "./icons/dir/twitter.svg?react";
 import Instagram from "./icons/dir/instagram.svg?react";
+import MenuLine from "./icons/dir/menu/menu-line.svg?react";
 
 export const ICONS = {
   "slider-chevron-left": SliderChevronLeft,
@@ -27,6 +28,7 @@ export const ICONS = {
   "menu-language": MenuLanguage,
   "product-rating": ProductRating,
   "menu-bar": Menu,
+  "menu-line": MenuLine,
 
   //home
   android: Android,

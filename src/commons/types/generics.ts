@@ -1,3 +1,5 @@
+import { LinkProps } from "react-router";
+
 export type ReactDivProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
@@ -13,3 +15,6 @@ export type ReactSVGProps = React.SVGProps<SVGSVGElement> & {
   desc?: string;
   descId?: string;
 };
+
+export type RouterLinkProps = LinkProps &
+  React.RefAttributes<HTMLAnchorElement>;

@@ -16,7 +16,7 @@ const fr = {
     best_seller: "Meilleures ventes",
     our_menu: "Notre menu",
     menu_category: {
-      low_price: "Aboutissement",
+      low_price: "Prix bas",
       high_price: "Prix élevé",
       average_price: "Prix moyen",
       luxury_price: "Prix de luxe",

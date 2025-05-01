@@ -1,90 +1,172 @@
+import { Button } from "@/commons/components/Button/Button";
+import { Icon } from "@/commons/components/Icon/Icon";
 import { useI18nContext } from "@/commons/i18n/i18n-react";
+import { RouterLinkProps } from "@/commons/types/generics";
 import { useState } from "react";
 import { Link } from "react-router";
 
-const MENU_CATEGORIES = [
-  "Low Price",
-  "Average Price",
-  "High Price",
-  "Luxury Price",
-];
+export type NavBarProps = {
+  showNavBarMobile: boolean;
+  onCloseMobileNav: () => void;
+};
 
-export const NavBar = () => {
+export const NavBar: React.FC<NavBarProps> = ({
+  showNavBarMobile,
+  onCloseMobileNav,
+}) => {
   const { LL } = useI18nContext();
   const [isMenuLinkHover, setIsMenuLinkHover] = useState(false);
   const [isMenuNavigationHover, setIsMenuNavigationHover] = useState(false);
-  const shouldShowMenu = isMenuLinkHover || isMenuNavigationHover;
+  const isDesktopMenuVisible = isMenuLinkHover || isMenuNavigationHover;
+
+  const navItems = [
+    {
+      id: "home",
+      header: LL.navbar.home(),
+    },
+    {
+      id: "menu",
+      header: LL.navbar.menu(),
+      children: [
+        {
+          header: LL.homepage.menu_category.low_price(),
+          children: ["Meat Only", "Meat + Cheese", "Cheese Only"],
+        },
+        {
+          header: LL.homepage.menu_category.average_price(),
+          children: ["Meat Only", "Meat + Cheese", "Cheese Only"],
+        },
+        {
+          header: LL.homepage.menu_category.high_price(),
+          children: ["Meat Only", "Meat + Cheese", "Cheese Only"],
+        },
+        {
+          header: LL.homepage.menu_category.luxury_price(),
+          children: ["Meat Only", "Meat + Cheese", "Cheese Only"],
+        },
+      ],
+    },
+    {
+      id: "about",
+      header: LL.navbar.about(),
+    },
+    {
+      id: "promotion",
+      header: LL.navbar.promotion(),
+    },
+  ];
 
   return (
     <div className="flex flex-col items-center relative">
-      <div className="flex gap-8 *:px-1.5 *:py-3 *:uppercase">
-        <Link
-          to="#"
-          className="border-b border-b-transparent hover:border-b-primary-red transition-all duration-200"
-        >
-          {LL.navbar.home()}
-        </Link>
-        <Link
+      {/*----------------NAVIGATION BAR ON DESKTOP---------------- */}
+      <div className="hidden sm:flex gap-8 *:px-1.5 *:py-3.5 *:uppercase">
+        <DesktopNavLink to="#">{LL.navbar.home()}</DesktopNavLink>
+        <DesktopNavLink
           to="#"
           onMouseEnter={() => setIsMenuLinkHover(true)}
           onMouseLeave={() => setIsMenuLinkHover(false)}
           className={`border-b transition-all duration-200${
-            shouldShowMenu ? " border-b-primary-red" : " border-b-transparent"
+            isDesktopMenuVisible
+              ? " border-b-primary-red"
+              : " border-b-transparent"
           }`}
         >
           {LL.navbar.menu()}
-        </Link>
-        <Link
-          to="#"
-          className="border-b border-b-transparent hover:border-b-primary-red transition-all duration-200"
-        >
-          {LL.navbar.about()}
-        </Link>
-        <Link
-          to="#"
-          className="border-b border-b-transparent hover:border-b-primary-red transition-all duration-200"
-        >
-          {LL.navbar.promotion()}
-        </Link>
+        </DesktopNavLink>
+        <DesktopNavLink to="#">{LL.navbar.about()}</DesktopNavLink>
+        <DesktopNavLink to="#">{LL.navbar.promotion()}</DesktopNavLink>
       </div>
-      {shouldShowMenu && (
+      {isDesktopMenuVisible && (
         <div
-          className="bg-primary-red text-white w-full absolute top-full z-10"
+          className="bg-primary-red text-white w-full absolute top-full z-10 py-5 px-8 md:px-24 lg:px-48 grid grid-cols-4 gap-x-4 gap-y-2 text-sm lg:text-base"
           onMouseEnter={() => setIsMenuNavigationHover(true)}
           onMouseLeave={() => setIsMenuNavigationHover(false)}
         >
-          <div className="py-5 px-48 grid grid-cols-4 gap-x-4 gap-y-2">
-            {MENU_CATEGORIES.map((menuHeader) => (
-              <Link
-                to="#"
-                key={menuHeader}
-                className="font-semibold uppercase py-1 my-1 border-b border-b-transparent hover:border-b-white"
-              >
-                {menuHeader}
-              </Link>
+          {navItems
+            .find((it) => it.id === "menu")
+            ?.children?.map(({ header, children }, index) => (
+              <div key={index} className="flex flex-col gap-3">
+                <Link
+                  to="#"
+                  key={index}
+                  className="font-semibold py-1 uppercase border-b border-b-transparent hover:border-b-white"
+                >
+                  {header}
+                </Link>
+                <div className="flex flex-col gap-2">
+                  {children.map((third, thirdIndex) => (
+                    <Link to="#" key={thirdIndex} className="hover:opacity-80">
+                      {third}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             ))}
+        </div>
+      )}
 
-            {[
-              "Meat Only",
-              "Meat Only",
-              "Meat Only",
-              "Meat Only",
-              "Meat + Cheese",
-              "Meat + Cheese",
-              "Meat + Cheese",
-              "Meat + Cheese",
-              "Cheese Only",
-              "Cheese Only",
-              "Cheese Only",
-              "Cheese Only",
-            ].map((item, index) => (
-              <Link to="#" key={index} className="hover:opacity-80">
-                {item}
+      {/*----------------NAVIGATION BAR ON MOBILE---------------- */}
+      {showNavBarMobile && (
+        <div className="bg-primary-red text-white fixed h-screen w-screen top-0 z-10 py-8 px-6 flex flex-col gap-5 overflow-scroll">
+          {navItems.map(({ header, children }) => (
+            <div>
+              <Link to="#" className="uppercase font-semibold">
+                {header}
               </Link>
-            ))}
+
+              {children?.length && (
+                <div className="pl-3 flex flex-col gap-4 my-4">
+                  {children.map(({ header, children }) => (
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <Link to="#" className="uppercase font-medium">
+                          {header}
+                        </Link>
+                      </div>
+
+                      <div className="pl-3 flex flex-col gap-4">
+                        {children.map((it) => (
+                          <div className="font-normal text-sm">
+                            <Link to="#">{it}</Link>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+          <div
+            className="absolute top-0 right-0"
+            style={{ padding: "inherit" }}
+          >
+            <Button
+              icon={<Icon name="slider-chevron-left" />}
+              onClick={onCloseMobileNav}
+            ></Button>
           </div>
         </div>
       )}
     </div>
   );
 };
+
+type DesktopNavItemProps = {
+  to: string;
+  children: string | React.ReactNode;
+} & RouterLinkProps;
+
+const DesktopNavLink: React.FC<DesktopNavItemProps> = ({
+  to,
+  children,
+  ...rest
+}) => (
+  <Link
+    to={to}
+    className="border-b border-b-transparent hover:border-b-primary-red transition-all duration-200"
+    {...rest}
+  >
+    {children}
+  </Link>
+);

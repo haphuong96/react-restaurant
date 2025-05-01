@@ -49,7 +49,7 @@ export const Button = ({
     fullWidth ? "w-full" : "",
     defaultRadius,
     defaultPadding,
-    "cursor-pointer transition-all duration-200 flex justify-center items-center",
+    "cursor-pointer transition-all duration-200 flex gap-2 justify-center items-center",
     className,
   ]
     .filter((className) => className)
@@ -57,7 +57,7 @@ export const Button = ({
 
   return (
     <button className={classes} {...rest}>
-      {icon && <span className="mr-2 flex items-center">{icon}</span>}
+      {icon && <span className="flex items-center">{icon}</span>}
       {children}
     </button>
   );

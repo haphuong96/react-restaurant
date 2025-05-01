@@ -4,7 +4,7 @@ import { useI18nContext } from "@/commons/i18n/i18n-react";
 import { Locales } from "@/commons/i18n/i18n-types";
 import { sessionStorageService } from "@/commons/services/storage/sessionStorage";
 
-export const UserMenu = () => {
+export const UserMenu: React.FC = () => {
   const { locale } = useI18nContext();
   // Event handlers
   const handleLanguageChange = (locale: Locales) => {
@@ -12,7 +12,7 @@ export const UserMenu = () => {
     window.location.reload();
   };
   return (
-    <div className="absolute top-5 right-0 flex gap-1">
+    <div className="flex gap-1">
       <div className="flex items-center">
         <Button
           className={`${locale === "en" ? "font-bold" : ""} p-2`}
@@ -29,9 +29,7 @@ export const UserMenu = () => {
         </Button>
       </div>
 
-      <Button>
-        <Icon name="menu-bar" />
-      </Button>
+      <Button icon={<Icon name="menu-bar" />}></Button>
     </div>
   );
 };

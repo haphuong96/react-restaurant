@@ -40,12 +40,12 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        {footerItems.map(({ header, items }, it) => (
-          <div key={it} className="basis-0 grow flex mt-8">
+        {footerItems.map(({ header, items }, index) => (
+          <div key={index} className="basis-0 grow flex mt-8">
             <div className="flex flex-col gap-1">
               <div className="font-bold my-3">{header}</div>
-              {items.map((item) => (
-                <div>{item}</div>
+              {items.map((item, index) => (
+                <div key={index}>{item}</div>
               ))}
             </div>
           </div>
