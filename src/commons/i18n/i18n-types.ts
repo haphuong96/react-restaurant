@@ -42,6 +42,10 @@ type RootTranslation = {
 			 * O​r​d​e​r​ ​n​o​w
 			 */
 			order_now: string
+			/**
+			 * L​o​r​e​m​ ​i​p​s​u​m​ ​d​o​l​o​r​ ​s​i​t​ ​a​m​e​t​,​ ​c​o​n​s​e​c​t​e​t​u​r​ ​a​d​i​p​i​s​c​i​n​g​ ​e​l​i​t​.
+			 */
+			subtitle: string
 		}
 		/**
 		 * B​e​s​t​ ​s​e​l​l​e​r
@@ -68,7 +72,49 @@ type RootTranslation = {
 			 * L​u​x​u​r​y​ ​p​r​i​c​e
 			 */
 			luxury_price: string
+			/**
+			 * E​x​p​l​o​r​e
+			 */
+			explore: string
 		}
+		qr: {
+			/**
+			 * L​A​ ​P​L​A​N​C​H​E​ ​I​S​ ​A​V​A​I​L​A​B​L​E​ ​F​O​R​ ​A​N​D​R​O​I​D​ ​A​N​D​ ​I​O​S
+			 */
+			available_for: string
+			/**
+			 * A​n​d​r​o​i​d
+			 */
+			android: string
+			/**
+			 * I​O​S
+			 */
+			ios: string
+		}
+	}
+	common: {
+		/**
+		 * A​d​d​ ​t​o​ ​C​a​r​t
+		 */
+		add_to_cart: string
+	}
+	footer: {
+		/**
+		 * C​A​T​E​G​O​R​I​E​S
+		 */
+		categories: string
+		/**
+		 * I​N​F​O​R​M​A​T​I​O​N
+		 */
+		information: string
+		/**
+		 * 6​1​ ​M​o​n​t​é​e​ ​D​e​s​ ​A​m​a​n​d​i​e​r​s​ ​2​6​1​1​0​ ​S​a​i​n​t​-​M​a​u​r​i​c​e​ ​S​u​r​ ​E​y​g​u​e​s​F​r​a​n​c​e
+		 */
+		address: string
+		/**
+		 * L​a​ ​P​l​a​n​c​h​e
+		 */
+		company_name: string
 	}
 }
 
@@ -101,6 +147,10 @@ export type TranslationFunctions = {
 			 * Order now
 			 */
 			order_now: () => LocalizedString
+			/**
+			 * Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			 */
+			subtitle: () => LocalizedString
 		}
 		/**
 		 * Best seller
@@ -127,7 +177,49 @@ export type TranslationFunctions = {
 			 * Luxury price
 			 */
 			luxury_price: () => LocalizedString
+			/**
+			 * Explore
+			 */
+			explore: () => LocalizedString
 		}
+		qr: {
+			/**
+			 * LA PLANCHE IS AVAILABLE FOR ANDROID AND IOS
+			 */
+			available_for: () => LocalizedString
+			/**
+			 * Android
+			 */
+			android: () => LocalizedString
+			/**
+			 * IOS
+			 */
+			ios: () => LocalizedString
+		}
+	}
+	common: {
+		/**
+		 * Add to Cart
+		 */
+		add_to_cart: () => LocalizedString
+	}
+	footer: {
+		/**
+		 * CATEGORIES
+		 */
+		categories: () => LocalizedString
+		/**
+		 * INFORMATION
+		 */
+		information: () => LocalizedString
+		/**
+		 * 61 Montée Des Amandiers 26110 Saint-Maurice Sur EyguesFrance
+		 */
+		address: () => LocalizedString
+		/**
+		 * La Planche
+		 */
+		company_name: () => LocalizedString
 	}
 }
 

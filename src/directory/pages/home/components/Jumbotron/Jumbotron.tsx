@@ -24,7 +24,7 @@ const FirstSlide = () => {
           {LL.homepage.jumbotron.delicious_delights_shared_moments()}
         </h2>
         <div className="mt-2.5 font-medium">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          {LL.homepage.jumbotron.subtitle()}
         </div>
         <Button
           variant="primary"

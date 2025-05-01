@@ -57,21 +57,25 @@ const MenuGridItem: React.FC<MenuGridItemProps> = ({
   title,
   backgroundImg,
   linkToUrl,
-}) => (
-  <BackgroundOverlay
-    backgroundImg={backgroundImg}
-    className="h-[420px] flex items-center justify-center"
-  >
-    <div className="flex flex-col gap-8 items-center justify-center">
-      <Text typeScale="t3" className="text-white text-center">
-        {title}
-      </Text>
-      <Link
-        to={linkToUrl}
-        className="uppercase border border-white text-white shadow-[0px_4px_8px_0px_#00000026] hover:bg-white hover:text-black py-2 px-6 rounded-lg transition-all duration-200"
-      >
-        Explore
-      </Link>
-    </div>
-  </BackgroundOverlay>
-);
+}) => {
+  const { LL } = useI18nContext();
+
+  return (
+    <BackgroundOverlay
+      backgroundImg={backgroundImg}
+      className="h-[420px] flex items-center justify-center"
+    >
+      <div className="flex flex-col gap-8 items-center justify-center">
+        <Text typeScale="t3" className="text-white text-center">
+          {title}
+        </Text>
+        <Link
+          to={linkToUrl}
+          className="uppercase border border-white text-white shadow-[0px_4px_8px_0px_#00000026] hover:bg-white hover:text-black py-2 px-6 rounded-lg transition-all duration-200"
+        >
+          {LL.homepage.menu_category.explore()}
+        </Link>
+      </div>
+    </BackgroundOverlay>
+  );
+};

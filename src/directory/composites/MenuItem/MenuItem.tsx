@@ -3,6 +3,7 @@ import { Button } from "@/commons/components/Button/Button";
 import { StarRating } from "@/commons/components/StarRating/StarRating";
 import { Text } from "@/commons/components/Text/Text";
 import productThumbnail from "@/directory/assets/jumobotron3.png";
+import { useI18nContext } from "@/commons/i18n/i18n-react";
 
 interface MenuItemProps {
   name: string;
@@ -21,6 +22,8 @@ export const MenuItemCard: React.FC<MenuItemProps> = ({
   rating = 0,
   className,
 }) => {
+  const { LL } = useI18nContext();
+
   return (
     <div
       className={`border border-[#EDEDED] flex flex-col items-center rounded-sm ${
@@ -71,7 +74,7 @@ export const MenuItemCard: React.FC<MenuItemProps> = ({
       </div>
 
       <Button variant="primary" className="my-4">
-        Add to Cart
+        {LL.common.add_to_cart()}
       </Button>
     </div>
   );
