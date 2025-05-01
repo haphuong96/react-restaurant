@@ -29,6 +29,7 @@ export const BestSeller: React.FC = () => {
               currentPrice={product.currentPrice}
               name={product.name}
               thumbnail={product.thumbnail}
+              rating={product.rating}
               className="mx-2"
             />
           ))}

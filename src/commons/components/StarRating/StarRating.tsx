@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { Icon } from "../Icon/Icon";
 
 type StarRatingProps = {
@@ -19,7 +19,7 @@ export const StarRating: React.FC<StarRatingProps> = ({
     for (let i = 0; i < maxRating; i++) {
       // fill should be between 0 and 1 (0% to 100%)
       const fillPercentage = Math.max(0, Math.min(1, rating - i)) * 100;
-      stars.push(<Star id={i} key={i} fillPercentage={fillPercentage} />);
+      stars.push(<Star key={i} fillPercentage={fillPercentage} />);
     }
 
     return stars;
@@ -29,7 +29,6 @@ export const StarRating: React.FC<StarRatingProps> = ({
 };
 
 export type StarProps = {
-  id: number;
   fillPercentage: number;
   size?: number;
   color?: string;
@@ -37,21 +36,22 @@ export type StarProps = {
 };
 
 export const Star = ({
-  id,
   fillPercentage,
   size = 14,
   color = "#FFD02C",
   filledColor = "#DDDDDD",
 }: StarProps) => {
+  const fillId = useId();
+
   return (
     <Icon
       name="product-rating"
-      fill={`url('#fill-${id}')`}
+      fill={`url('#${fillId}')`}
       width={size}
       height={size}
     >
       <defs>
-        <linearGradient id={`fill-${id}`}>
+        <linearGradient id={`${fillId}`}>
           <stop offset={`${fillPercentage}%`} stopColor={color} />
           <stop offset={`${fillPercentage}%`} stopColor={filledColor} />
         </linearGradient>

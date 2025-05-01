@@ -9,6 +9,7 @@ export interface Product {
   price: number;
   currentPrice: number;
   isBestSeller: boolean;
+  rating: number;
   thumbnail: string | null;
 }
 
