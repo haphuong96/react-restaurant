@@ -1,0 +1,39 @@
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.slider-arrow-prev {
+  left: max(calc((100% - var(--container-7xl)) / 2), 0px);
+}
+
+.slider-arrow-next {
+  right: max(calc((100% - var(--container-7xl)) / 2), 0px);
+}
+
+.slider-dots {
+  bottom: calc(var(--spacing) * 7);
+}
+
+.slider-dots li button::before {
+  color: #ffffff99;
+  font-size: var(--text-sm);
+}
+
+.slider-dots li.slick-active button::before {
+  color: var(--color-primary-red);
+}
