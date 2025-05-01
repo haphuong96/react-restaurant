@@ -1,17 +1,17 @@
 export type BackgroundOverlayProps = {
   children?: React.ReactNode;
-  backgroundImgUrl?: string;
+  backgroundImg?: string;
   className?: string;
 };
 
 export const BackgroundOverlay: React.FC<BackgroundOverlayProps> = ({
   children,
-  backgroundImgUrl,
+  backgroundImg,
   className,
 }) => {
-  const style = backgroundImgUrl
+  const style = backgroundImg
     ? {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../src${backgroundImgUrl})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(${backgroundImg})`,
         backgroundSize: "cover, cover",
         backgroundPosition: "center, center",
       }

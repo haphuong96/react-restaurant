@@ -2,28 +2,29 @@ import { Text } from "@/commons/components/Text/Text";
 import { useI18nContext } from "@/commons/i18n/i18n-react";
 import { BackgroundOverlay } from "@/directory/components/BackgroundOverlay/BackgroundOverlay";
 import { Link } from "react-router";
+import menuItemBg from "@/directory/assets/jumbotron2.png";
 
 export const MenuGrid = () => {
   const { LL } = useI18nContext();
-  const menuItems = [
+  const menuItems: MenuGridItemProps[] = [
     {
       title: LL.homepage.menu_category.low_price(),
-      bgImageUrl: "/directory/assets/jumbotron2.png",
+      backgroundImg: menuItemBg,
       linkToUrl: "/menu/1",
     },
     {
       title: LL.homepage.menu_category.average_price(),
-      bgImageUrl: "/directory/assets/jumbotron2.png",
+      backgroundImg: menuItemBg,
       linkToUrl: "/menu/2",
     },
     {
       title: LL.homepage.menu_category.high_price(),
-      bgImageUrl: "/directory/assets/jumbotron2.png",
+      backgroundImg: menuItemBg,
       linkToUrl: "/menu/3",
     },
     {
       title: LL.homepage.menu_category.luxury_price(),
-      bgImageUrl: "/directory/assets/jumbotron2.png",
+      backgroundImg: menuItemBg,
       linkToUrl: "/menu/4",
     },
   ];
@@ -37,7 +38,7 @@ export const MenuGrid = () => {
           <MenuGridItem
             key={index}
             title={item.title}
-            bgImageUrl={item.bgImageUrl}
+            backgroundImg={item.backgroundImg}
             linkToUrl={item.linkToUrl}
           />
         ))}
@@ -48,17 +49,17 @@ export const MenuGrid = () => {
 
 type MenuGridItemProps = {
   title: string;
-  bgImageUrl: string;
+  backgroundImg: string;
   linkToUrl: string;
 };
 
 const MenuGridItem: React.FC<MenuGridItemProps> = ({
   title,
-  bgImageUrl,
+  backgroundImg,
   linkToUrl,
 }) => (
   <BackgroundOverlay
-    backgroundImgUrl={bgImageUrl}
+    backgroundImg={backgroundImg}
     className="h-[420px] flex items-center justify-center"
   >
     <div className="flex flex-col gap-8 items-center justify-center">
