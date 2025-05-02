@@ -23,8 +23,8 @@ export const Footer = () => {
 
   return (
     <div className="bg-[#F5EAEA]">
-      <Container className="flex pb-8">
-        <div className="basis-0 grow">
+      <Container className="flex flex-col py-8 mini-tablet:pt-0 *:basis-0 *:grow mini-tablet:flex-row text-center mini-tablet:text-start">
+        <div className="flex justify-center mini-tablet:justify-normal">
           <div className="w-fit flex flex-col items-center gap-2">
             <img src={logo} className="w-48" />
             <div className="flex gap-4">
@@ -41,7 +41,10 @@ export const Footer = () => {
           </div>
         </div>
         {footerItems.map(({ header, items }, index) => (
-          <div key={index} className="basis-0 grow flex mt-8">
+          <div
+            key={index}
+            className="flex mt-8 justify-center mini-tablet:justify-normal"
+          >
             <div className="flex flex-col gap-1">
               <div className="font-bold my-3">{header}</div>
               {items.map((item, index) => (

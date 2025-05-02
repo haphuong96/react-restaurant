@@ -1,0 +1,39 @@
+.container-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2rem;
+  grid-template-areas:
+    "header header"
+    "button button"
+    "qr image";
+
+  @media (min-width: 640px) {
+    grid-template-areas:
+      "image header"
+      "image button"
+      "image qr";
+  }
+}
+
+.header {
+  grid-area: header;
+}
+.img-container {
+  grid-area: image;
+}
+.btn-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  grid-area: button;
+  width: 75%;
+  margin: auto;
+
+  > div {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+.qr {
+  grid-area: qr;
+}

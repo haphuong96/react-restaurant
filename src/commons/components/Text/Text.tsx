@@ -9,11 +9,13 @@ const typeScaleClasses: Record<
 > = {
   t2: {
     tag: "h2",
-    className: "uppercase font-medium text-[32px]",
+    className:
+      "uppercase font-medium text-xl mini-tablet:text-2xl desktop:text-[32px]",
   },
   t3: {
     tag: "h3",
-    className: "uppercase font-medium text-4xl",
+    className:
+      "text-base mini-tablet:text-xl tablet:text-2xl desktop:text-4xl uppercase font-medium",
   },
   ct3: {
     tag: "h3",
@@ -21,7 +23,7 @@ const typeScaleClasses: Record<
   },
   b3: {
     tag: "span",
-    className: "font-normal text-base",
+    className: "text-xs mini-tablet:text-sm desktop:text-base",
   },
 };
 

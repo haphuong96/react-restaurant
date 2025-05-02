@@ -29,6 +29,11 @@
   --color-primary-red: #970024;
   --color-primary-black: #374151;
   /* typography scale */
+
+  /** breakpoints*/
+  --breakpoint-mini-tablet: 640px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
 }
 
 body {

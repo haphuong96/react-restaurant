@@ -110,7 +110,7 @@ export const NavBar: React.FC<NavBarProps> = ({
         <div className="bg-primary-red text-white fixed h-screen w-screen top-0 z-10 py-8 px-6 flex flex-col gap-5 overflow-scroll">
           {navItems.map(({ header, children }) => (
             <div>
-              <Link to="#" className="uppercase font-semibold">
+              <Link to="#" className="uppercase font-semibold hover:opacity-80">
                 {header}
               </Link>
 
@@ -119,7 +119,10 @@ export const NavBar: React.FC<NavBarProps> = ({
                   {children.map(({ header, children }) => (
                     <div className="flex flex-col gap-4">
                       <div>
-                        <Link to="#" className="uppercase font-medium">
+                        <Link
+                          to="#"
+                          className="uppercase font-medium hover:opacity-80"
+                        >
                           {header}
                         </Link>
                       </div>
@@ -127,7 +130,9 @@ export const NavBar: React.FC<NavBarProps> = ({
                       <div className="pl-3 flex flex-col gap-4">
                         {children.map((it) => (
                           <div className="font-normal text-sm">
-                            <Link to="#">{it}</Link>
+                            <Link to="#" className="hover:opacity-80">
+                              {it}
+                            </Link>
                           </div>
                         ))}
                       </div>

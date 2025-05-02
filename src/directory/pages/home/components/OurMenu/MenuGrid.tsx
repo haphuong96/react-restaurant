@@ -63,17 +63,17 @@ const MenuGridItem: React.FC<MenuGridItemProps> = ({
   return (
     <BackgroundOverlay
       backgroundImg={backgroundImg}
-      className="h-[420px] flex items-center justify-center"
+      className="h-[200px] mini-tablet:h-[300px] desktop:h-[420px] flex items-center justify-center"
     >
-      <div className="flex flex-col gap-8 items-center justify-center">
+      <div className="flex flex-col gap-4 desktop:gap-8 items-center justify-center">
         <Text typeScale="t3" className="text-white text-center">
           {title}
         </Text>
         <Link
           to={linkToUrl}
-          className="uppercase border border-white text-white shadow-[0px_4px_8px_0px_#00000026] hover:bg-white hover:text-black py-2 px-6 rounded-lg transition-all duration-200"
+          className="uppercase border border-white text-white shadow-[0px_4px_8px_0px_#00000026] hover:bg-white hover:text-black py-1 tablet:py-2 px-3 tablet:px-6 rounded-lg transition-all duration-200"
         >
-          {LL.homepage.menu_category.explore()}
+          <Text>{LL.homepage.menu_category.explore()}</Text>
         </Link>
       </div>
     </BackgroundOverlay>
