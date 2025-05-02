@@ -1,4 +1,4 @@
-import logo from "@/commons/assets/logo.svg";
+import logo from "@/commons/assets/logo.png";
 import { Container } from "../Container/Container";
 import { Icon } from "@/commons/components/Icon/Icon";
 import { Link } from "react-router";

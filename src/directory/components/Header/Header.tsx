@@ -1,5 +1,5 @@
 import { Container } from "@/directory/components/Container/Container";
-import logo from "@/commons/assets/logo.svg";
+import logo from "@/commons/assets/logo.png";
 import { UserMenu } from "./components/UserMenu";
 import { NavBar } from "./components/NavBar";
 import { Icon } from "@/commons/components/Icon/Icon";
@@ -22,7 +22,7 @@ export const Header = () => {
             ></Button>
           </div>
           <div className="basis-0 grow flex justify-center">
-            <img src={logo} />
+            <img src={logo} width={130} />
           </div>
           <div className="basis-0 grow flex justify-end">
             <UserMenu />
