@@ -108,16 +108,16 @@ export const NavBar: React.FC<NavBarProps> = ({
       {/*----------------NAVIGATION BAR ON MOBILE---------------- */}
       {showNavBarMobile && (
         <div className="bg-primary-red text-white fixed h-screen w-screen top-0 z-10 py-8 px-6 flex flex-col gap-5 overflow-scroll">
-          {navItems.map(({ header, children }) => (
-            <div>
+          {navItems.map(({ header, children }, firstLevelId) => (
+            <div key={firstLevelId}>
               <Link to="#" className="uppercase font-semibold hover:opacity-80">
                 {header}
               </Link>
 
               {children?.length && (
                 <div className="pl-3 flex flex-col gap-4 my-4">
-                  {children.map(({ header, children }) => (
-                    <div className="flex flex-col gap-4">
+                  {children.map(({ header, children }, secondLevelId) => (
+                    <div className="flex flex-col gap-4" key={secondLevelId}>
                       <div>
                         <Link
                           to="#"
@@ -128,8 +128,11 @@ export const NavBar: React.FC<NavBarProps> = ({
                       </div>
 
                       <div className="pl-3 flex flex-col gap-4">
-                        {children.map((it) => (
-                          <div className="font-normal text-sm">
+                        {children.map((it, thirdLevelId) => (
+                          <div
+                            className="font-normal text-sm"
+                            key={thirdLevelId}
+                          >
                             <Link to="#" className="hover:opacity-80">
                               {it}
                             </Link>
@@ -149,6 +152,7 @@ export const NavBar: React.FC<NavBarProps> = ({
             <Button
               icon={<Icon name="slider-chevron-left" />}
               onClick={onCloseMobileNav}
+              className="hover:brightness-90 rounded-sm transition-colors"
             ></Button>
           </div>
         </div>

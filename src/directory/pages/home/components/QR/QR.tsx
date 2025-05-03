@@ -15,7 +15,7 @@ export const QR = () => {
       <div className="img-container flex justify-center">
         <img src={MobileImage} />
       </div>
-      <div className="header font-semibold uppercase text-xl mini-tablet:text-2xl tablet:text-3xl desktop:text-4xl flex justify-center items-center">
+      <div className="header font-semibold uppercase text-xl mini-tablet:text-2xl tablet:text-3xl desktop:text-4xl flex justify-center items-end">
         {LL.homepage.qr.available_for()}
       </div>
       <div className="btn-container">

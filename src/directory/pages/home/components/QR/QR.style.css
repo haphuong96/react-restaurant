@@ -12,6 +12,7 @@
       "image header"
       "image button"
       "image qr";
+    gap: 0;
   }
 }
 
@@ -26,12 +27,17 @@
   gap: 1rem;
   justify-content: center;
   grid-area: button;
-  width: 75%;
+  width: 90%;
+  max-width: 360px;
   margin: auto;
 
   > div {
     flex-basis: 0;
     flex-grow: 1;
+  }
+
+  @media (min-width: 640px) {
+    width: 75%;
   }
 }
 .qr {
