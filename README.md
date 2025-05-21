@@ -12,7 +12,14 @@ For the best development experience with Tailwind CSS, add the following to your
   "editor.quickSuggestions": {
     "strings": "on"
   },
-  "tailwindCSS.experimental.configFile": "src/index.css"
+  "tailwindCSS.experimental.configFile": "src/index.css",
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "classname",
+    ".*ClassName.*"
+  ],
+  "tailwindCSS.classFunctions": ["clsx"]
 }
 ```
 

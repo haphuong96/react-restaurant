@@ -1,6 +1,7 @@
+import clsx from "clsx";
 import { JSX, ReactNode } from "react";
 
-type TypeScale = "t2" | "t3" | "ct3" | "b3";
+type TypeScale = "t2" | "t3" | "t4" | "ct3" | "b3";
 
 // Map typescale to font size classes
 const typeScaleClasses: Record<
@@ -9,21 +10,27 @@ const typeScaleClasses: Record<
 > = {
   t2: {
     tag: "h2",
-    className:
-      "uppercase font-medium text-xl mini-tablet:text-2xl desktop:text-[32px]",
+    className: clsx(
+      "uppercase font-medium text-xl mini-tablet:text-2xl desktop:text-[32px]"
+    ),
   },
   t3: {
     tag: "h3",
-    className:
-      "text-base mini-tablet:text-xl tablet:text-2xl desktop:text-4xl uppercase font-medium",
+    className: clsx(
+      "text-base mini-tablet:text-xl tablet:text-2xl desktop:text-4xl uppercase font-medium"
+    ),
+  },
+  t4: {
+    tag: "h4",
+    className: clsx("text-2xl"),
   },
   ct3: {
     tag: "h3",
-    className: "font-light text-base",
+    className: clsx("font-light text-base"),
   },
   b3: {
     tag: "span",
-    className: "text-xs mini-tablet:text-sm desktop:text-base",
+    className: clsx("text-xs mini-tablet:text-sm desktop:text-base"),
   },
 };
 

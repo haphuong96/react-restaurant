@@ -22,7 +22,7 @@ export const Footer = () => {
   ];
 
   return (
-    <div className="bg-[#F5EAEA]">
+    <div className="bg-primary-beige">
       <Container className="flex flex-col py-8 mini-tablet:pt-0 *:basis-0 *:grow mini-tablet:flex-row text-center mini-tablet:text-start">
         <div className="flex justify-center mini-tablet:justify-normal">
           <div className="w-fit flex flex-col items-center gap-2">

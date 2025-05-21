@@ -1,6 +1,7 @@
 import { ReactButtonProps } from "@/commons/types/generics";
 import { ReactNode } from "react";
 import "./Button.style.css";
+import clsx from "clsx";
 
 // Define button variant options
 export type ButtonVariant =
@@ -44,16 +45,14 @@ export const Button = ({
   const defaultRadius = "btn-radius";
   const defaultPadding = variant === "default" ? "" : "btn-padding";
 
-  const classes = [
+  const classes = clsx([
     variantClasses[variant],
     fullWidth ? "w-full" : "",
     defaultRadius,
     defaultPadding,
     "cursor-pointer transition-all duration-200 flex gap-2 justify-center items-center",
     className,
-  ]
-    .filter((className) => className)
-    .join(" ");
+  ]);
 
   return (
     <button className={classes} {...rest}>
