@@ -13,6 +13,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "@tailwindcss/vite": "^4.0.11",
     "axios": "^1.8.4",
     "clsx": "^2.1.1",
@@ -23,7 +24,8 @@
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "^4.0.11",
-    "typesafe-i18n": "^5.26.2"
+    "typesafe-i18n": "^5.26.2",
+    "zod": "^3.25.13"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",

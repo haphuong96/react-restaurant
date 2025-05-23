@@ -12,8 +12,8 @@ export const Header = () => {
   return (
     <header className="mb-3">
       <Container>
-        <div className="relative w-full flex justify-center">
-          <div className="basis-0 grow flex items-center sm:invisible">
+        <div className="relative w-full grid grid-cols-3 items-center">
+          <div className="sm:invisible">
             <Button
               icon={<Icon name="menu-line" />}
               onClick={() => {
@@ -21,10 +21,10 @@ export const Header = () => {
               }}
             ></Button>
           </div>
-          <div className="basis-0 grow flex justify-center">
+          <div className="flex justify-center">
             <img src={logo} width={130} />
           </div>
-          <div className="basis-0 grow flex justify-end">
+          <div className="flex justify-end">
             <UserMenu />
           </div>
         </div>

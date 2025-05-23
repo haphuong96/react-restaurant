@@ -60,7 +60,7 @@ export const NavBar: React.FC<NavBarProps> = ({
     <div className="flex flex-col items-center relative">
       {/*----------------NAVIGATION BAR ON DESKTOP---------------- */}
       <div className="hidden sm:flex gap-8 *:px-1.5 *:py-3.5 *:uppercase">
-        <DesktopNavLink to="#">{LL.navbar.home()}</DesktopNavLink>
+        <DesktopNavLink to="/">{LL.navbar.home()}</DesktopNavLink>
         <DesktopNavLink
           to="#"
           onMouseEnter={() => setIsMenuLinkHover(true)}
